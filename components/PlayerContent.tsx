@@ -12,7 +12,11 @@ import usePlayer from "@/hooks/usePlayer";
 import LikeButton from "./LikeButton";
 import MediaItem from "./MediaItem";
 import Slider from "./Slider";
+<<<<<<< HEAD
 
+=======
+//import useSound from "use-sound";
+>>>>>>> 5e61b1a18dece484c584f20cbd0916646f46f2cf
 
 interface PlayerContentProps {
   song: Song;
@@ -60,35 +64,42 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
     player.setId(previousSong);
   }
 
-  const [play, { pause, sound }] = useSound(
-    songUrl,
-    { 
-      volume: volume,
-      onplay: () => setIsPlaying(true),
-      onend: () => {
-        setIsPlaying(false);
-        onPlayNext();
-      },
-      onpause: () => setIsPlaying(false),
-      format: ['mp3']
-    }
-  );
+  // const [play, { pause, sound }] = useSound(
+  //   songUrl,
+  //   { 
+  //     volume: volume,
+  //     onplay: () => setIsPlaying(true),
+  //     onend: () => {
+  //       setIsPlaying(false);
+  //       onPlayNext();
+  //     },
+  //     onpause: () => setIsPlaying(false),
+  //     format: ['mp3']
+  //   }
+  // );
 
+<<<<<<< HEAD
   useEffect(() => {
     sound?.play();
-    
-    return () => {
-      sound?.unload();
-    }
-  }, [sound]);
+=======
 
-  const handlePlay = () => {
-    if (!isPlaying) {
-      play();
-    } else {
-      pause();
-    }
-  }
+
+  // useEffect(() => {
+  //   sound?.play();
+>>>>>>> 5e61b1a18dece484c584f20cbd0916646f46f2cf
+    
+  //   return () => {
+  //     sound?.unload();
+  //   }
+  // }, [sound]);
+
+  // const handlePlay = () => {
+  //   if (!isPlaying) {
+  //     play();
+  //   } else {
+  //     pause();
+  //   }
+  // }
 
   const toggleMute = () => {
     if (volume === 0) {
@@ -118,7 +129,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
           "
         >
           <div 
-            onClick={handlePlay} 
+            onClick={()=>{}} //handleplay 
             className="
               h-10
               w-10
@@ -158,7 +169,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             "
           />
           <div 
-            onClick={handlePlay} 
+            onClick={()=>{}} //handleplay 
             className="
               flex 
               items-center 
